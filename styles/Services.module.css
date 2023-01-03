@@ -1,0 +1,38 @@
+.main {
+    color: brown;
+    text-align: center;
+  }
+
+  .text {
+    max-width: 90%;
+    margin: auto;
+    text-align: justify;
+  }
+  
+  .btn {
+    text-align: center;
+    padding-top: 1.5em;
+  }
+
+  .btn a {
+    text-decoration: none;
+  }
+
+  .btn a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  
+  @media (min-width: 45em) {
+    .text {
+      columns: 2;
+      column-gap:1.5rem;
+      max-width: 50%;
+      margin: auto;
+    }
+  
+    .text p{
+      margin-top: 0;
+    }
+  }

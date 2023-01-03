@@ -53,7 +53,7 @@ const Contact = () => {
           </p>
 
           <section className={styles.btn}>
-        <Link href="https://facebok.com/ecometal/">Facebook чат</Link>
+        <Link href="https://www.facebook.com/ecometal/">Facebook чат</Link>
       </section>
 
 

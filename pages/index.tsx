@@ -91,9 +91,6 @@ export default function Home() {
           </h5>
         </div>
 
-        <div className={styles.item2}>
-          <Image src="/carscrap.webp" alt="cars" width={500} height={300} />
-        </div>
       </section>
       <section className={styles.button}>
         <Link href="/services">Услуги</Link>

@@ -16,7 +16,11 @@ const Services = () => {
       <main className={styles.main}>
         <h1>Нашите услуги включват</h1>
         <div className="picture">
-          <Image src="/carsforscrap.webp" alt="cars" width={500} height={300} />
+          <Image src="/carsforscrap.webp" alt="cars" width={500} height={300} 
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }} />
 
           <h3>Всичко необходимо за бракуването на Вашата кола</h3>
         </div>

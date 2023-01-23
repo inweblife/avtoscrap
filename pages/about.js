@@ -17,7 +17,11 @@ const About = () => {
       <main className={styles.main}>
       <h1>Нашата работа говори най-добре за нас</h1>
         <div className="picture">
-          <Image src="/carsold.webp" alt="cars" width={500} height={300} />
+          <Image src="/carsold.webp" alt="cars" width={500} height={300} 
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}/>
 
           
           <h3>Вече преработихме над 100 000 автомобила за скрап</h3>

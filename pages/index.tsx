@@ -16,7 +16,10 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className="picture">
-          <Image src="/mercedes.webp" alt="cars" width={500} height={300} />
+          <Image src="/mercedes.webp" alt="cars" width={500} height={300} style={{
+              maxWidth: "100%",
+              height: "auto",
+            }} />
 
           <h1>Автомобили за скрап София</h1>
           <h3 className={styles.first_paragraph}>

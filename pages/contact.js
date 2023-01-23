@@ -16,7 +16,12 @@ const Contact = () => {
       <main className={styles.main}>
         <h1>Контакт с Коли за скрап</h1>
         <div className="picture">
-          <Image src="/avtoscrap.webp" alt="cars" width={500} height={300} />
+          <Image src="/avtoscrap.webp" alt="cars" width={500} height={300} 
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
+            />
 
           <h3>Онлайн оценка на Вашата кола веднага</h3>
         </div>

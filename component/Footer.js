@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <copyright>Copyright 2023 Коли за скрап София</copyright>
+      <copyright>Copyright {new Date().getFullYear()} Коли за скрап София</copyright>
     </footer>
   );
 };

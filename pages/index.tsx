@@ -13,7 +13,7 @@ export default function Home() {
         <meta name="keywords" content="Коли за скрап София, Изкупуване на коли, автомобили за скрап" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="google-site-verification" content="55EJxgwxLPCdk5rMfhwsUdTXFh0GDDQdMokxR4pYWcs" />
+        <meta name="google-site-verification" content="o3yDWZaFGvq8nSbZFsW2kJnBTWBvjgYuVkIS_8vihgQ" />
       </Head>
       <main className={styles.main}>
         <div className="picture">

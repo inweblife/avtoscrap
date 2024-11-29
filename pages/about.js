@@ -8,22 +8,32 @@ const About = () => {
     <>
       <Head>
         <title> За нас | Коли за скрап</title>
-        <meta name="description" content="Изкупува коли за скрап в София, предлага най-добри цени за автоскрап" />
-        <meta name="keywords" content="Автоморга в София изкупува стари коли, Бракува автомобили, Екометал инженеринг" />
+        <meta
+          name="description"
+          content="Изкупува коли за скрап в София, предлага най-добри цени за автоскрап"
+        />
+        <meta
+          name="keywords"
+          content="Автоморга в София изкупува стари коли, Бракува автомобили, Екометал инженеринг"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-      <h1>Нашата работа говори най-добре за нас</h1>
+        <h1>Нашата работа говори най-добре за нас</h1>
         <div className="picture">
-          <Image src="/carsold.webp" alt="cars" width={500} height={300} 
+          <Image
+            src="/carsold.webp"
+            alt="cars"
+            width={500}
+            height={300}
             style={{
               maxWidth: "100%",
               height: "auto",
-            }}/>
+            }}
+          />
 
-          
           <h3>Вече преработихме над 100 000 автомобила за скрап</h3>
         </div>
       </main>
@@ -73,7 +83,11 @@ const About = () => {
           <p>
             За да върнете кола за скрап при нас е достатъчно да имате един от
             двата талона на колата и да представите Ваш документ, като лице,
-            което връща колата.
+            което връща колата. От наша страна ще издадем{" "}
+            <Link href="https://kolazascrap.com/blog/documenti-za-brakuvane-na-kola/">
+              <strong>документ за бракуване на кола</strong>
+            </Link>
+            . Това е важно по-късно при <Link href="https://kolazascrap.com/blog/deregistracia-na-mps/"><strong>дерегистрация на МПС</strong></Link>.
           </p>
 
           <p>

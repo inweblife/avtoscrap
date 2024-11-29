@@ -87,7 +87,11 @@ const About = () => {
             <Link href="https://kolazascrap.com/blog/documenti-za-brakuvane-na-kola/">
               <strong>документ за бракуване на кола</strong>
             </Link>
-            . Това е важно по-късно при <Link href="https://kolazascrap.com/blog/deregistracia-na-mps/"><strong>дерегистрация на МПС</strong></Link>.
+            . Това е важно по-късно при{" "}
+            <Link href="https://kolazascrap.com/blog/deregistracia-na-mps/">
+              <strong>дерегистрация на МПС</strong>
+            </Link>
+            .
           </p>
 
           <p>

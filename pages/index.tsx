@@ -151,7 +151,7 @@ export default function Home() {
             на производство, тип на двигателя - дизел или бензин, купе - седан,
             хечбек или комби, както и местонахождение. Осигуряваме всичко
             необходимо за{" "}
-            <a href="https://kolazascrap.com/barkuvane-na-avtomobil/">
+            <a href="https://kolazascrap.com/blog/brakuvane-na-avtomobil/">
               <strong>бракуване на автомобила.</strong>
             </a>
           </p>

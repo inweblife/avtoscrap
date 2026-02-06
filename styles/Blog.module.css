@@ -51,6 +51,18 @@
   color: #333;
 }
 
+.postContent h2 {
+  color: brown;
+  font-size: 1.8em;
+  margin: 1.5em 0 0.8em 0;
+  border-bottom: 2px solid brown;
+  padding-bottom: 0.5em;
+}
+
+.postContent h2:first-child {
+  margin-top: 0;
+}
+
 .postContent p {
   margin: 1em 0;
 }

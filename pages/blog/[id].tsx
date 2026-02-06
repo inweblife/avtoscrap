@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "../../styles/Blog.module.css";
 import blogPosts from "../../data/blog-posts.json";
 
@@ -49,6 +50,8 @@ interface PostPageProps {
 }
 
 export default function BlogPost({ post }: PostPageProps) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -83,18 +86,7 @@ export default function BlogPost({ post }: PostPageProps) {
               />
             </div>
           )}
-          <p>{post.content}</p>
-
-          <div className={styles.emptyPlaceholder}>
-            <p>
-              Тази публикация все още е функционална. Съдържанието ще бъде
-              добавено по-скоро.
-            </p>
-            <p>
-              Можете да се свържете с нас за повече информация по телефон:{" "}
-              <a href="tel:0885701660">0885 70 16 60</a>
-            </p>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
         <section className={styles.relatedPosts}>
@@ -104,12 +96,15 @@ export default function BlogPost({ post }: PostPageProps) {
               .filter((p: BlogPost) => p.id !== post.id)
               .slice(0, 2)
               .map((relatedPost: BlogPost) => (
-                <Link key={relatedPost.id} href={`/blog/${relatedPost.id}`}>
-                  <div className={styles.relatedCard}>
-                    <h4>{relatedPost.title}</h4>
-                    <p>{relatedPost.excerpt}</p>
-                  </div>
-                </Link>
+                <div
+                  key={relatedPost.id}
+                  className={styles.relatedCard}
+                  onClick={() => router.push(`/blog/${relatedPost.id}`)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <h4>{relatedPost.title}</h4>
+                  <p>{relatedPost.excerpt}</p>
+                </div>
               ))}
           </div>
         </section>

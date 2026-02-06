@@ -3,9 +3,12 @@ import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import blogPosts from "../data/blog-posts.json";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -48,9 +51,9 @@ export default function Home() {
         <div className={styles.paragraph}>
           <p>
             Ние сме лицензиран търговец на{" "}
-            <Link href="/about">
+            <a href="/about" style={{ textDecoration: "none", color: "inherit" }}>
               <strong>коли за скрап</strong>
-            </Link>{" "}
+            </a>{" "}
             - търговско дружество опериращо на територията на град София, чиято
             основна дейност е изкупуване на автомобили за скрап.
           </p>
@@ -83,9 +86,9 @@ export default function Home() {
 
           <p>
             За всяка една кола, която купуваме, издаваме{" "}
-            <Link href="/services">
+            <a href="/services" style={{ textDecoration: "none", color: "inherit" }}>
               <strong>документи за бракуване</strong>
-            </Link>
+            </a>
             , с които по-късно бързо и лесно ще отпишете колата от КАТ,
             съответно - Общината, за да бъде снета от отчет.
           </p>
@@ -143,9 +146,9 @@ export default function Home() {
           <p>
             За да бъде оценена Вашата кола, е необходимо да изберете удобен за
             Вас начин{" "}
-            <Link href="/contact">
+            <a href="/contact" style={{ textDecoration: "none", color: "inherit" }}>
               <strong>за връзка с нас</strong>
-            </Link>{" "}
+            </a>{" "}
             - може да ни се обадите по телефона, може да ни пишете в месинджър
             или чрез имейл на пощата. Преди това, обаче, е необходимо да се
             приготвите с малко данни за Вашия автомобил - марка, модел, година
@@ -170,61 +173,64 @@ export default function Home() {
 
         <div className={styles.blogGrid}>
           {blogPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
-              <div className={styles.blogCard}>
-                {post.image && (
-                  <div className={styles.cardImage}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={400}
-                      height={250}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                      }}
-                    />
-                  </div>
-                )}
-                <div className={styles.cardContent}>
-                  <h3>{post.title}</h3>
-                  <p className={styles.blogExcerpt}>
-                    {post.excerpt.includes("коли за скрап калкулатор") ? (
-                      <>
-                        {post.excerpt.split("коли за скрап калкулатор")[0]}
-                        <a
-                          href="https://kolazascrap.com"
-                          className={styles.innerLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          коли за скрап калкулатор
-                        </a>
-                        {post.excerpt.split("коли за скрап калкулатор")[1]}
-                      </>
-                    ) : post.excerpt.includes("бракуване на кола") ? (
-                      <>
-                        {post.excerpt.split("бракуване на кола")[0]}
-                        <a
-                          href="https://ecometal.bg/blog/brakuvane-na-kola/"
-                          className={styles.innerLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          бракуване на кола
-                        </a>
-                        {post.excerpt.split("бракуване на кола")[1]}
-                      </>
-                    ) : (
-                      post.excerpt
-                    )}
-                  </p>
-                  <span className={styles.readMore}>Прочетете повече →</span>
+            <div
+              key={post.id}
+              className={styles.blogCard}
+              onClick={() => router.push(`/blog/${post.id}`)}
+              style={{ cursor: "pointer" }}
+            >
+              {post.image && (
+                <div className={styles.cardImage}>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={400}
+                    height={250}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
                 </div>
+              )}
+              <div className={styles.cardContent}>
+                <h3>{post.title}</h3>
+                <p className={styles.blogExcerpt}>
+                  {post.excerpt.includes("коли за скрап калкулатор") ? (
+                    <>
+                      {post.excerpt.split("коли за скрап калкулатор")[0]}
+                      <a
+                        href="https://kolazascrap.com"
+                        className={styles.innerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        коли за скрап калкулатор
+                      </a>
+                      {post.excerpt.split("коли за скрап калкулатор")[1]}
+                    </>
+                  ) : post.excerpt.includes("бракуване на кола") ? (
+                    <>
+                      {post.excerpt.split("бракуване на кола")[0]}
+                      <a
+                        href="https://ecometal.bg/blog/brakuvane-na-kola/"
+                        className={styles.innerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        бракуване на кола
+                      </a>
+                      {post.excerpt.split("бракуване на кола")[1]}
+                    </>
+                  ) : (
+                    post.excerpt
+                  )}
+                </p>
+                <span className={styles.readMore}>Прочетете повече →</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>

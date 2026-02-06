@@ -1,26 +1,38 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import styles from "../styles/Services.module.css";
 
-const Services = () => {
+const Services: React.FC = () => {
   return (
     <>
       <Head>
         <title>Коли за скрап | Нашите услуги</title>
-        <meta name="description" content="Издава всички необходими документи за бракване на МПС" />
-        <meta name="keywords" content="Бракува ненужни коли, Документ за Дерегистрация КАТ, Екометал" />
+        <meta
+          name="description"
+          content="Издава всички необходими документи за бракване на МПС"
+        />
+        <meta
+          name="keywords"
+          content="Бракува ненужни коли, Документ за Дерегистрация КАТ, Екометал"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
         <h1>Нашите услуги включват</h1>
         <div className="picture">
-          <Image src="/carsforscrap.webp" alt="cars" width={500} height={300} 
+          <Image
+            src="/carsforscrap.webp"
+            alt="Услуги за бракуване и разкомплектоване на коли"
+            width={500}
+            height={300}
             style={{
               maxWidth: "100%",
               height: "auto",
-            }} />
+            }}
+          />
 
           <h3>Всичко необходимо за бракуването на Вашата кола</h3>
         </div>

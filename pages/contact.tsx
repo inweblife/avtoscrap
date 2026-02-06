@@ -1,27 +1,38 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import styles from "../styles/Contact.module.css";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <>
       <Head>
         <title>За контакти | Коли за скрап</title>
-        <meta name="description" content="За връзка с нас 0885 70 16 60. Работи без почивен ден от 08 до 20, включително събота и неделя. Осигурва безплатен транспорт от място." />
-        <meta name="keywords" content="Купува изгодно коли, Най-добри цени за коли, Изкупува всякакви коли" />
+        <meta
+          name="description"
+          content="За връзка с нас 0885 70 16 60. Работи без почивен ден от 08 до 20, включително събота и неделя. Осигурва безплатен транспорт от място."
+        />
+        <meta
+          name="keywords"
+          content="Купува изгодно коли, Най-добри цени за коли, Изкупува всякакви коли"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
         <h1>Контакт с Коли за скрап</h1>
         <div className="picture">
-          <Image src="/avtoscrap.webp" alt="cars" width={500} height={300} 
+          <Image
+            src="/avtoscrap.webp"
+            alt="Контактуване на центъра за скрап в София"
+            width={500}
+            height={300}
             style={{
               maxWidth: "100%",
               height: "auto",
             }}
-            />
+          />
 
           <h3>Онлайн оценка на Вашата кола веднага</h3>
         </div>
@@ -44,8 +55,8 @@ const Contact = () => {
           <p>Ако искате да разговаряте с нас обадете ни се</p>
 
           <section className={styles.btn}>
-        <Link href="tel:0885701660">0885 70 16 60</Link>
-      </section>
+            <Link href="tel:0885701660">0885 70 16 60</Link>
+          </section>
 
           <p>
             Ние работим всеки ден от 8 сутринта до 20 вечерта, без почивен ден и
@@ -53,22 +64,17 @@ const Contact = () => {
             който сте се записали при нас.
           </p>
 
-          <p>
-          Ако искате да ни пишете в чата на фейсбук
-          </p>
+          <p>Ако искате да ни пишете в чата на фейсбук</p>
 
           <section className={styles.btn}>
-        <Link href="https://www.facebook.com/ecometal/">Facebook чат</Link>
-      </section>
+            <Link href="https://www.facebook.com/ecometal/">Facebook чат</Link>
+          </section>
 
-
-          <p>
-          Ако предпочитате да ни пишете на имейл, заповядайте
-          </p>
+          <p>Ако предпочитате да ни пишете на имейл, заповядайте</p>
 
           <section className={styles.btn}>
-        <Link href="mailto:cars@ecometal.bg">Поща</Link>
-      </section>
+            <Link href="mailto:cars@ecometal.bg">Поща</Link>
+          </section>
 
           <p>
             За да върнете кола за скрап и при нас е достатъчно да имате един от

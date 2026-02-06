@@ -1,0 +1,155 @@
+.blogPostMain {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+.postHeader {
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.postHeader a {
+  color: brown;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.postHeader a:hover {
+  text-decoration: underline;
+}
+
+.postHeader h1 {
+  color: brown;
+  font-size: 2.5em;
+  margin: 0.5em 0;
+  line-height: 1.3;
+}
+
+.postMeta {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  color: #666;
+  font-size: 0.95em;
+  margin-top: 1em;
+}
+
+.author,
+.date {
+  font-weight: 500;
+}
+
+.postContent {
+  background: #f9f9f9;
+  padding: 2em;
+  border-radius: 8px;
+  line-height: 1.8;
+  margin-bottom: 3em;
+  color: #333;
+}
+
+.postContent p {
+  margin: 1em 0;
+}
+
+.postImage {
+  margin: 0 -2em 1.5em -2em;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.postImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.emptyPlaceholder {
+  background: #e8f4f8;
+  padding: 1.5em;
+  border-left: 4px solid brown;
+  border-radius: 4px;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.emptyPlaceholder p {
+  color: #556;
+  margin: 0.5em 0;
+}
+
+.emptyPlaceholder a {
+  color: brown;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.emptyPlaceholder a:hover {
+  text-decoration: underline;
+}
+
+.relatedPosts {
+  margin-top: 4em;
+  padding-top: 2em;
+  border-top: 2px solid #ddd;
+}
+
+.relatedPosts h3 {
+  color: brown;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+.relatedCard {
+  padding: 1.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.relatedCard:hover {
+  border-color: brown;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+}
+
+.relatedCard h4 {
+  color: brown;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.relatedCard p {
+  color: #666;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+@media (min-width: 45em) {
+  .postHeader h1 {
+    font-size: 3em;
+  }
+
+  .postMeta {
+    gap: 3em;
+  }
+
+  .postContent {
+    padding: 3em;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

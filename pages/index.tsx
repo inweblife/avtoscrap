@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import blogPosts from "../data/blog-posts.json";
 
 export default function Home() {
   return (
@@ -162,8 +163,38 @@ export default function Home() {
           `}</style>
         </div>
       </section>
-      <section className={styles.btn}>
-        <Link href="/contact">За Контакти</Link>
+
+      <section className={styles.blogSection}>
+        <h2>Блог</h2>
+        <p className={styles.blogIntro}>Последни публикации и полезни статии за автомобилите за скрап</p>
+        
+        <div className={styles.blogGrid}>
+          {blogPosts.map((post) => (
+            <Link key={post.id} href={`/blog/${post.id}`}>
+              <div className={styles.blogCard}>
+                {post.image && (
+                  <div className={styles.cardImage}>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={400}
+                      height={250}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                      }}
+                    />
+                  </div>
+                )}
+                <div className={styles.cardContent}>
+                  <h3>{post.title}</h3>
+                  <p className={styles.blogExcerpt}>{post.excerpt}</p>
+                  <span className={styles.readMore}>Прочетете повече →</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
     </>
   );

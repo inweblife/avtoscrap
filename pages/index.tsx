@@ -65,7 +65,7 @@ export default function Home() {
 
           <p>
             Всеки сам може да провери{" "}
-            <a href="https://kolazascrap.com/blog/kolko-struva-kola-za-scrap/">
+            <a href="https://kolazascrap.com/blog/kolko-struva-kola-za-scrap/" target="_blank" rel="noopener noreferrer">
               <strong>колко струва кола за скрап</strong>
             </a>{" "}
             в калкулатора ни за оценка на скрап автомобили. Крайната оценка и
@@ -153,9 +153,9 @@ export default function Home() {
             или чрез имейл на пощата. Преди това, обаче, е необходимо да се
             приготвите с малко данни за Вашия автомобил - марка, модел, година
             на производство, тип на двигателя - дизел или бензин, купе - седан,
-            хечбек или комби, както и местонахождение. Осигуряваме всичко
+            хечбек или комби, както и местонахождение.             Осигуряваме всичко
             необходимо за{" "}
-            <a href="https://kolazascrap.com/blog/brakuvane-na-avtomobil/">
+            <a href="https://kolazascrap.com/blog/brakuvane-na-avtomobil/" target="_blank" rel="noopener noreferrer">
               <strong>бракуване на автомобила.</strong>
             </a>
           </p>
@@ -173,63 +173,64 @@ export default function Home() {
 
         <div className={styles.blogGrid}>
           {blogPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`} legacyBehavior>
-              <a className={styles.blogCard}>
-                {post.image && (
-                  <div className={styles.cardImage}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={400}
-                      height={250}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                      }}
-                    />
-                  </div>
-                )}
-                <div className={styles.cardContent}>
-                  <h3>{post.title}</h3>
-                  <p className={styles.blogExcerpt}>
-                    {post.excerpt.includes("коли за скрап калкулатор") ? (
-                      <>
-                        {post.excerpt.split("коли за скрап калкулатор")[0]}
-                        <button
-                          type="button"
-                          className={styles.innerLink}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open("https://kolazascrap.com", "_blank", "noopener");
-                          }}
-                        >
-                          коли за скрап калкулатор
-                        </button>
-                        {post.excerpt.split("коли за скрап калкулатор")[1]}
-                      </>
-                    ) : post.excerpt.includes("бракуване на кола") ? (
-                      <>
-                        {post.excerpt.split("бракуване на кола")[0]}
-                        <button
-                          type="button"
-                          className={styles.innerLink}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open("https://ecometal.bg/blog/brakuvane-na-kola/", "_blank", "noopener");
-                          }}
-                        >
-                          бракуване на кола
-                        </button>
-                        {post.excerpt.split("бракуване на кола")[1]}
-                      </>
-                    ) : (
-                      post.excerpt
-                    )}
-                  </p>
-                  <span className={styles.readMore}>Прочетете повече →</span>
+            <div key={post.id} className={styles.blogCardWrapper}>
+              <Link href={`/blog/${post.id}`} legacyBehavior>
+                <a className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
+              </Link>
+              {post.image && (
+                <div className={styles.cardImage}>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={400}
+                    height={250}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
                 </div>
-              </a>
-            </Link>
+              )}
+              <div className={styles.cardContent}>
+                <h3>{post.title}</h3>
+                <p className={styles.blogExcerpt}>
+                  {post.excerpt.includes("коли за скрап калкулатор") ? (
+                    <>
+                      {post.excerpt.split("коли за скрап калкулатор")[0]}
+                      <a
+                        href="https://kolazascrap.com/"
+                        className={styles.innerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        коли за скрап калкулатор
+                      </a>
+                      {post.excerpt.split("коли за скрап калкулатор")[1]}
+                    </>
+                  ) : post.excerpt.includes("бракуване на кола") ? (
+                    <>
+                      {post.excerpt.split("бракуване на кола")[0]}
+                      <a
+                        href="https://ecometal.bg/blog/brakuvane-na-kola/"
+                        className={styles.innerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        бракуване на кола
+                      </a>
+                      {post.excerpt.split("бракуване на кола")[1]}
+                    </>
+                  ) : (
+                    post.excerpt
+                  )}
+                </p>
+                <Link href={`/blog/${post.id}`} legacyBehavior>
+                  <a className={styles.readMore}>Прочетете повече →</a>
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       </section>

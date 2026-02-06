@@ -19,6 +19,7 @@ const About: React.FC = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"}/about`} />
       </Head>
 
       <main className={styles.main}>
@@ -85,7 +86,7 @@ const About: React.FC = () => {
             За да върнете кола за скрап при нас е достатъчно да имате един от
             двата талона на колата и да представите Ваш документ, като лице,
             което връща колата. От наша страна ще издадем{" "}
-              <Link href="/blog/2" legacyBehavior>
+              <Link href="/blog/dokumenti-za-brakuvane-na-kola" legacyBehavior>
                 <a style={{ textDecoration: "none", color: "inherit" }}>
                   <strong>документ за бракуване на кола</strong>
                 </a>

@@ -17,7 +17,7 @@ interface BlogPost {
 
 export async function getStaticProps(context: { params: { id: string } }) {
   const post = blogPosts.find(
-    (post: BlogPost) => post.id === parseInt(context.params.id)
+    (post: BlogPost) => post.slug === context.params.id
   );
 
   if (!post) {
@@ -35,7 +35,7 @@ export async function getStaticProps(context: { params: { id: string } }) {
 
 export async function getStaticPaths() {
   const paths = blogPosts.map((post: BlogPost) => ({
-    params: { id: post.id.toString() },
+    params: { id: post.slug },
   }));
 
   return {
@@ -50,7 +50,7 @@ interface PostPageProps {
 
 export default function BlogPost({ post }: PostPageProps) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
-  const canonicalUrl = `${baseUrl}/blog/${post.id}`;
+  const canonicalUrl = `${baseUrl}/blog/${post.slug}`;
   const ogImage = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/mercedes.webp`;
 
   return (
@@ -131,7 +131,7 @@ export default function BlogPost({ post }: PostPageProps) {
               .map((relatedPost: BlogPost) => (
                 <div key={relatedPost.id} className={styles.relatedCard}>
                   <h4>
-                    <Link href={`/blog/${relatedPost.id}`}>{relatedPost.title}</Link>
+              <Link href={`/blog/${relatedPost.slug}`}>{relatedPost.title}</Link>
                   </h4>
                   <p>{relatedPost.excerpt}</p>
                 </div>

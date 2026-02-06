@@ -204,7 +204,7 @@ export default function Home() {
         <div className={styles.blogGrid}>
           {blogPosts.map((post) => (
             <div key={post.id} className={styles.blogCardWrapper}>
-              <Link href={`/blog/${post.id}`} legacyBehavior>
+              <Link href={`/blog/${post.slug}`} legacyBehavior>
                 <a className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               </Link>
               {post.image && (
@@ -227,7 +227,7 @@ export default function Home() {
                   className={styles.blogExcerpt}
                   dangerouslySetInnerHTML={{ __html: post.excerpt }}
                 />
-                <Link href={`/blog/${post.id}`} legacyBehavior>
+                <Link href={`/blog/${post.slug}`} legacyBehavior>
                   <a className={styles.readMore}>Прочетете повече →</a>
                 </Link>
               </div>

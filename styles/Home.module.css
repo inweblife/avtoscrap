@@ -82,6 +82,10 @@
   margin: 0 auto;
 }
 
+.blogGrid a {
+  text-decoration: none;
+}
+
 .blogCard {
   padding: 0;
   border: 2px solid brown;
@@ -145,6 +149,17 @@
   color: brown;
   font-weight: bold;
   font-size: 0.9em;
+}
+
+.innerLink {
+  color: brown;
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+.innerLink:hover {
+  color: darkred;
+  text-underline-offset: 2px;
 }
 
 .blogCard:hover .readMore {

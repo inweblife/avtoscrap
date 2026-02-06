@@ -167,7 +167,7 @@ export default function Home() {
       <section className={styles.blogSection}>
         <h2>Блог</h2>
         <p className={styles.blogIntro}>Последни публикации и полезни статии за автомобилите за скрап</p>
-        
+
         <div className={styles.blogGrid}>
           {blogPosts.map((post) => (
             <Link key={post.id} href={`/blog/${post.id}`}>
@@ -188,7 +188,39 @@ export default function Home() {
                 )}
                 <div className={styles.cardContent}>
                   <h3>{post.title}</h3>
-                  <p className={styles.blogExcerpt}>{post.excerpt}</p>
+                  <p className={styles.blogExcerpt}>
+                    {post.excerpt.includes("коли за скрап калкулатор") ? (
+                      <>
+                        {post.excerpt.split("коли за скрап калкулатор")[0]}
+                        <a
+                          href="https://kolazascrap.com"
+                          className={styles.innerLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          коли за скрап калкулатор
+                        </a>
+                        {post.excerpt.split("коли за скрап калкулатор")[1]}
+                      </>
+                    ) : post.excerpt.includes("бракуване на кола") ? (
+                      <>
+                        {post.excerpt.split("бракуване на кола")[0]}
+                        <a
+                          href="https://ecometal.bg/blog/brakuvane-na-kola/"
+                          className={styles.innerLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          бракуване на кола
+                        </a>
+                        {post.excerpt.split("бракуване на кола")[1]}
+                      </>
+                    ) : (
+                      post.excerpt
+                    )}
+                  </p>
                   <span className={styles.readMore}>Прочетете повече →</span>
                 </div>
               </div>

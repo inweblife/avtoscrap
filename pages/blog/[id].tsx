@@ -53,6 +53,11 @@ export default function BlogPost({ post }: PostPageProps) {
   const canonicalUrl = `${baseUrl}/blog/${post.slug}`;
   const ogImage = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/mercedes.webp`;
 
+  // Find previous and next posts
+  const currentIndex = blogPosts.findIndex((p: BlogPost) => p.id === post.id);
+  const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
+
   return (
     <>
       <Head>
@@ -121,6 +126,24 @@ export default function BlogPost({ post }: PostPageProps) {
           )}
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
+
+        {/* Previous/Next Post Navigation */}
+        <nav className={styles.postNavigation} style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2em', padding: '1em 0', borderTop: '1px solid #ccc' }}>
+          {prevPost ? (
+            <Link href={`/blog/${prevPost.slug}`} className={styles.prevPost} style={{ textDecoration: 'none', color: 'inherit' }}>
+              ← Предишен: {prevPost.title}
+            </Link>
+          ) : (
+            <span></span>
+          )}
+          {nextPost ? (
+            <Link href={`/blog/${nextPost.slug}`} className={styles.nextPost} style={{ textDecoration: 'none', color: 'inherit' }}>
+              Следващ: {nextPost.title} →
+            </Link>
+          ) : (
+            <span></span>
+          )}
+        </nav>
 
         <section className={styles.relatedPosts}>
           <h3>Други публикации</h3>

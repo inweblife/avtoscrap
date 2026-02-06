@@ -75,7 +75,7 @@ export default function Home() {
           </p>
 
           <section className={styles.btn}>
-            <Link href="tel:0885701660">0885 70 16 60</Link>
+            <a href="tel:0885701660">0885 70 16 60</a>
           </section>
 
           <p>

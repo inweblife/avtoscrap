@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
           <p>Ако искате да разговаряте с нас обадете ни се</p>
 
           <section className={styles.btn}>
-            <Link href="tel:0885701660">0885 70 16 60</Link>
+            <a href="tel:0885701660">0885 70 16 60</a>
           </section>
 
           <p>
@@ -67,13 +67,13 @@ const Contact: React.FC = () => {
           <p>Ако искате да ни пишете в чата на фейсбук</p>
 
           <section className={styles.btn}>
-            <Link href="https://www.facebook.com/ecometal/">Facebook чат</Link>
+            <a href="https://www.facebook.com/ecometal/" target="_blank" rel="noopener noreferrer">Facebook чат</a>
           </section>
 
           <p>Ако предпочитате да ни пишете на имейл, заповядайте</p>
 
           <section className={styles.btn}>
-            <Link href="mailto:cars@ecometal.bg">Поща</Link>
+            <a href="mailto:cars@ecometal.bg">Поща</a>
           </section>
 
           <p>

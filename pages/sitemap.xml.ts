@@ -11,7 +11,7 @@ interface SiteMapEntry {
 
 const generateSiteMap = (posts: any[]): string => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
-  
+
   const staticPages: SiteMapEntry[] = [
     {
       url: '/',
@@ -35,8 +35,8 @@ const generateSiteMap = (posts: any[]): string => {
     },
   ];
 
-  const blogPages: SiteMapEntry[] = posts.map((post: { id: number; date?: string }) => ({
-    url: `/blog/${post.id}`,
+  const blogPages: SiteMapEntry[] = posts.map((post: { id: number; slug: string; date?: string }) => ({
+    url: `/blog/${post.slug}`,
     changefreq: 'monthly',
     priority: '0.7',
     lastmod: post.date || new Date().toISOString().split('T')[0],
@@ -47,8 +47,8 @@ const generateSiteMap = (posts: any[]): string => {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      ${allPages
-       .map(({ url, changefreq, priority, lastmod }) => {
-         return `
+      .map(({ url, changefreq, priority, lastmod }) => {
+        return `
      <url>
        <loc>${`${baseUrl}${url}`}</loc>
        ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}
@@ -56,8 +56,8 @@ const generateSiteMap = (posts: any[]): string => {
        <priority>${priority}</priority>
      </url>
    `;
-       })
-       .join('')}
+      })
+      .join('')}
    </urlset>
  `;
 };

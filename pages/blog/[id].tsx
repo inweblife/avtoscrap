@@ -57,7 +57,7 @@ export default function BlogPost({ post }: PostPageProps) {
     <>
       <Head>
         <title>{post.title} | Коли за скрап</title>
-        <meta name="description" content={post.excerpt} />
+        <meta name="description" content={post.excerpt.replace(/<[^>]*>/g, '')} />
         <meta name="keywords" content="коли за скрап, бракуване, документи КАТ, автомобили за скрап" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -65,13 +65,38 @@ export default function BlogPost({ post }: PostPageProps) {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={`${post.title} | Коли за скрап`} />
-        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:description" content={post.excerpt.replace(/<[^>]*>/g, '')} />
         <meta property="og:image" content={ogImage} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": post.excerpt.replace(/<[^>]*>/g, ''),
+              "author": {
+                "@type": "Person",
+                "name": post.author
+              },
+              "datePublished": post.date,
+              "image": ogImage,
+              "publisher": {
+                "@type": "Organization",
+                "name": "Коли за скрап София",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": `${baseUrl}/mercedes.webp`
+                }
+              }
+            })
+          }}
+        />
       </Head>
 
       <main className={styles.blogPostMain}>
         <div className={styles.postHeader}>
-          <Link href="/">← Назад към начало</Link>
+          <Link href="/" aria-label="Назад към началната страница">← Назад към начало</Link>
           <h1>{post.title}</h1>
           <div className={styles.postMeta}>
             <span className={styles.author}>{post.author}</span>

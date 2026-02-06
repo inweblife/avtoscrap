@@ -1,6 +1,16 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+
+# Disallow API routes
+Disallow: /api/
 Disallow: /accounts
+
+# Allow all other pages
+Allow: /blog/
+Allow: /about
+Allow: /services
+Allow: /contact
 
 # Замени с реалния домейн при публикуване (напр. https://avtoscrap.bg)
 Sitemap: https://example.com/sitemap.xml

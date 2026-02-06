@@ -21,18 +21,48 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"} />
         <meta name="google-site-verification" content="o3yDWZaFGvq8nSbZFsW2kJnBTWBvjgYuVkIS_8vihgQ" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"} />
         <meta property="og:title" content="Коли за скрап София" />
         <meta property="og:description" content="Коли за скрап София. Изкупуване на автомобили за скрап. Калкулатор за скрап автомобили онлайн." />
         <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"}/mercedes.webp`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Коли за скрап София",
+              "description": "Изкупуване на автомобили за скрап в София и областта. Безплатен транспорт и документи за бракуване.",
+              "telephone": "+359885701660",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ул. Свети Георги Победоносец №1а",
+                "addressLocality": "София",
+                "addressRegion": "Кремиковци",
+                "postalCode": "1849",
+                "addressCountry": "BG"
+              },
+              "areaServed": [
+                { "@type": "City", "name": "София" },
+                { "@type": "City", "name": "Пловдив" },
+                { "@type": "City", "name": "Варна" },
+                { "@type": "City", "name": "Бургас" },
+                { "@type": "Country", "name": "България" }
+              ],
+              "priceRange": "$$",
+              "openingHours": "Mo-Su 08:00-20:00"
+            })
+          }}
+        />
       </Head>
       <main className={styles.main}>
         <div className="picture">
           <Image
             src="/mercedes.webp"
-            alt="cars"
+            alt="Автомобили за скрап в София - Изкупуване на стари и повредени коли"
             width={500}
             height={300}
             style={{
@@ -75,7 +105,7 @@ export default function Home() {
           </p>
 
           <section className={styles.btn}>
-            <a href="tel:0885701660">0885 70 16 60</a>
+            <a href="tel:+359885701660" aria-label="Обадете се на 0885 70 16 60">0885 70 16 60</a>
           </section>
 
           <p>
@@ -193,39 +223,10 @@ export default function Home() {
               )}
               <div className={styles.cardContent}>
                 <h3>{post.title}</h3>
-                <p className={styles.blogExcerpt}>
-                  {post.excerpt.includes("коли за скрап калкулатор") ? (
-                    <>
-                      {post.excerpt.split("коли за скрап калкулатор")[0]}
-                      <a
-                        href="https://kolazascrap.com/"
-                        className={styles.innerLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        коли за скрап калкулатор
-                      </a>
-                      {post.excerpt.split("коли за скрап калкулатор")[1]}
-                    </>
-                  ) : post.excerpt.includes("бракуване на кола") ? (
-                    <>
-                      {post.excerpt.split("бракуване на кола")[0]}
-                      <a
-                        href="https://ecometal.bg/blog/brakuvane-na-kola/"
-                        className={styles.innerLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        бракуване на кола
-                      </a>
-                      {post.excerpt.split("бракуване на кола")[1]}
-                    </>
-                  ) : (
-                    post.excerpt
-                  )}
-                </p>
+                <p
+                  className={styles.blogExcerpt}
+                  dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                />
                 <Link href={`/blog/${post.id}`} legacyBehavior>
                   <a className={styles.readMore}>Прочетете повече →</a>
                 </Link>

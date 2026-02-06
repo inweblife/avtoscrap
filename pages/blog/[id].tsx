@@ -96,13 +96,10 @@ export default function BlogPost({ post }: PostPageProps) {
               .filter((p: BlogPost) => p.id !== post.id)
               .slice(0, 2)
               .map((relatedPost: BlogPost) => (
-                <div
-                  key={relatedPost.id}
-                  className={styles.relatedCard}
-                  onClick={() => router.push(`/blog/${relatedPost.id}`)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <h4>{relatedPost.title}</h4>
+                <div key={relatedPost.id} className={styles.relatedCard}>
+                  <h4>
+                    <Link href={`/blog/${relatedPost.id}`}>{relatedPost.title}</Link>
+                  </h4>
                   <p>{relatedPost.excerpt}</p>
                 </div>
               ))}

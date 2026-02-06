@@ -144,23 +144,6 @@ export default function BlogPost({ post }: PostPageProps) {
             <span></span>
           )}
         </nav>
-
-        <section className={styles.relatedPosts}>
-          <h3>Други публикации</h3>
-          <div className={styles.relatedGrid}>
-            {blogPosts
-              .filter((p: BlogPost) => p.id !== post.id)
-              .slice(0, 2)
-              .map((relatedPost: BlogPost) => (
-                <div key={relatedPost.id} className={styles.relatedCard}>
-                  <h4>
-              <Link href={`/blog/${relatedPost.slug}`}>{relatedPost.title}</Link>
-                  </h4>
-                  <p>{relatedPost.excerpt}</p>
-                </div>
-              ))}
-          </div>
-        </section>
       </main>
     </>
   );

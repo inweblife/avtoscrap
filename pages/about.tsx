@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <>
       <Head>
-        <title> За нас | Коли за скрап</title>
+        <title>За нас | Коли за скрап</title>
         <meta
           name="description"
           content="Изкупува коли за скрап в София, предлага най-добри цени за автоскрап"

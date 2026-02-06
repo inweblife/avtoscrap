@@ -6,8 +6,9 @@ export default function NotFound() {
   return (
     <>
       <Head>
-        <title>404 - Страната не е намерена | Коли за скрап</title>
-        <meta name="description" content="Страната която търсиш не съществува. Върни се към начало." />
+        <title>404 - Страницата не е намерена | Коли за скрап</title>
+        <meta name="description" content="Страницата която търсите не съществува. Върни се към начало." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex, follow" />
       </Head>
       <main className={styles.errorContainer}>
@@ -15,7 +16,7 @@ export default function NotFound() {
           <h1 className={styles.errorCode}>404</h1>
           <h2 className={styles.errorTitle}>Страната не е намерена</h2>
           <p className={styles.errorMessage}>
-            Съжаляваме, но страната която търсиш не съществува или е преместена.
+            Съжаляваме, но страницата която търсите не съществува или е преместена.
           </p>
           <div className={styles.errorActions}>
             <Link href="/" className={styles.homeButton}>

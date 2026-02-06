@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import styles from "../../styles/Blog.module.css";
 import blogPosts from "../../data/blog-posts.json";
 
@@ -50,15 +49,24 @@ interface PostPageProps {
 }
 
 export default function BlogPost({ post }: PostPageProps) {
-  const router = useRouter();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
+  const canonicalUrl = `${baseUrl}/blog/${post.id}`;
+  const ogImage = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/mercedes.webp`;
 
   return (
     <>
       <Head>
         <title>{post.title} | Коли за скрап</title>
         <meta name="description" content={post.excerpt} />
+        <meta name="keywords" content="коли за скрап, бракуване, документи КАТ, автомобили за скрап" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={`${post.title} | Коли за скрап`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={ogImage} />
       </Head>
 
       <main className={styles.blogPostMain}>

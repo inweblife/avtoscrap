@@ -1,7 +1,6 @@
-# Block all crawlers for /accounts
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow: /accounts
 
-# Allow all crawlers
-User-agent: *
-Allow: /
+# Замени с реалния домейн при публикуване (напр. https://avtoscrap.bg)
+Sitemap: https://example.com/sitemap.xml

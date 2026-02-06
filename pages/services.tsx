@@ -11,7 +11,7 @@ const Services: React.FC = () => {
         <title>Коли за скрап | Нашите услуги</title>
         <meta
           name="description"
-          content="Издава всички необходими документи за бракване на МПС"
+          content="Издава всички необходими документи за бракуване на МПС"
         />
         <meta
           name="keywords"

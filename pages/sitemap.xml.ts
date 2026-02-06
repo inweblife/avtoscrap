@@ -35,11 +35,11 @@ const generateSiteMap = (posts: any[]): string => {
     },
   ];
 
-  const blogPages: SiteMapEntry[] = posts.map((post) => ({
+  const blogPages: SiteMapEntry[] = posts.map((post: { id: number; date?: string }) => ({
     url: `/blog/${post.id}`,
     changefreq: 'monthly',
     priority: '0.7',
-    lastmod: post.lastmod || new Date().toISOString().split('T')[0],
+    lastmod: post.date || new Date().toISOString().split('T')[0],
   }));
 
   const allPages: SiteMapEntry[] = [...staticPages, ...blogPages];

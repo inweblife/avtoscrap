@@ -7,17 +7,18 @@ const ServerError: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Внутрешна грешка | Коли за скрап</title>
+        <title>Вътрешна грешка | Коли за скрап</title>
         <meta
           name="description"
-          content="Възникна внутрешна грешка. Моля, опитайте отново по-късно."
+          content="Възникна вътрешна грешка. Моля, опитайте отново по-късно."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex" />
       </Head>
 
       <main className={styles.errorContainer}>
         <div className={styles.errorCode}>500</div>
-        <h1 className={styles.errorTitle}>Внутрешна грешка на сървъра</h1>
+        <h1 className={styles.errorTitle}>Вътрешна грешка на сървъра</h1>
         <p className={styles.errorMessage}>
           Извиняваме се, но възникна неочаквана грешка. Моля опитайте отново по-късно
           или свържете се с нас.

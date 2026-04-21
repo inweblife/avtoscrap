@@ -8,6 +8,18 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: beige;
 }
+
+.picture {
+  width: min(100%, 1240px);
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.picture h1,
+.picture h3 {
+  text-align: center;
+}
 header {
   padding: 1em;
   background: azure;

@@ -74,9 +74,10 @@
 .postImage {
   position: relative;
   margin: 0 -2em 1.5em -2em;
-  aspect-ratio: 16 / 9;
+  height: clamp(240px, 44vw, 430px);
   border-radius: 8px 8px 0 0;
   overflow: hidden;
+  background: #d7d0c6;
 }
 
 .postImage img {

@@ -1,11 +1,12 @@
 .heroImage {
   position: relative;
-  width: min(100%, 960px);
-  aspect-ratio: 16 / 9;
-  margin: 1.25rem auto 1rem;
+  width: 100%;
+  height: clamp(230px, 42vw, 430px);
+  margin: 0 auto 1.25rem;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  background: #d7d0c6;
 }
 
 .main {

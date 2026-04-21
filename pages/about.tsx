@@ -48,9 +48,11 @@ const About: React.FC = () => {
       <section className={styles.text}>
         <div className={styles.paragraph}>
           <p>
-            Изкупуваме автомобили за скрап повече от 20 години и за това време
-            се усъвършенствахме да работим по начин съобразен изцяло с
-            удобствата на клиента.
+            <Link href="/blog/izkupuvane-na-koli-za-scrap" style={{ textDecoration: "none", color: "inherit" }}>
+              <strong>Изкупуваме автомобили за скрап</strong>
+            </Link>{" "}
+            повече от 20 години и за това време се усъвършенствахме да работим
+            по начин съобразен изцяло с удобствата на клиента.
           </p>
 
           <p>
@@ -70,13 +72,26 @@ const About: React.FC = () => {
             За да може да оценим Вашият автомобил ние питаме за марка, модел,
             година на производство, тип на двигател - дизел или бензин, тип на
             купе - седан, хечбек или комби, както и за местонахождение.
+            Изкупуваме и автомобили с технически проблеми -{" "}
+            <a href="https://kolazascrap.com/blog/dizelovi-koli-gtp/" target="_blank" rel="noopener noreferrer">
+              <strong>дизелови коли и проблеми с гтп</strong>
+            </a>{" "}
+            или{" "}
+            <a href="https://kolazascrap.com/blog/benzinovi-koli-problem-s-gtp/" target="_blank" rel="noopener noreferrer">
+              <strong>бензинови коли проблеми с вредните емисии</strong>
+            </a>
+            {" "}също намират добра цена при нас.
           </p>
 
           <p>
             След като ни дадете тези данни, ние оценяваме Вашата стара кола на
             момента и уточняваме всички останали детайли, които могат да
             повлияят върху цената - липсващи части, окомплектовка, експлоатация,
-            състояние и др.
+            състояние и др. Прочетете повече за{" "}
+            <Link href="/blog/kolko-struva-kola-za-scrap" style={{ textDecoration: "none", color: "inherit" }}>
+              <strong>колко струва кола за скрап</strong>
+            </Link>
+            {" "}в нашия блог.
           </p>
 
           <p>

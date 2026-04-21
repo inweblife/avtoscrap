@@ -4,6 +4,12 @@
   padding: 2em 1em;
 }
 
+.blogListMain {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
 .postHeader {
   margin-bottom: 3em;
   text-align: center;

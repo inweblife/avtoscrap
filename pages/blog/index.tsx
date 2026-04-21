@@ -62,7 +62,7 @@ export default function BlogIndex() {
         />
       </Head>
 
-      <main className={blogStyles.blogPostMain}>
+      <main className={blogStyles.blogListMain}>
         <div className={blogStyles.postHeader}>
           <Link href="/" aria-label="Назад към началната страница">
             ← Назад към начало

@@ -55,7 +55,7 @@ export default function BlogIndex() {
         </div>
 
         <div className={styles.blogGrid}>
-          {(blogPosts as BlogPost[]).map((post) => (
+          {[...(blogPosts as BlogPost[])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
             <div key={post.id} className={styles.blogCardWrapper}>
               <Link href={`/blog/${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               {post.image && (

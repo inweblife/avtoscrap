@@ -79,6 +79,7 @@
 
 .postContent a {
   color: brown;
+  font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 3px;
 }

@@ -36,10 +36,11 @@ const Contact: React.FC = () => {
             fill
             sizes="(min-width: 45em) 900px, 100vw"
             style={{ objectFit: "cover" }}
+            priority
           />
           </div>
 
-          <h3>Онлайн оценка на Вашата кола веднага</h3>
+          <h2>Онлайн оценка на Вашата кола веднага</h2>
         </div>
       </main>
 
@@ -60,7 +61,7 @@ const Contact: React.FC = () => {
           <p>Ако искате да разговаряте с нас обадете ни се</p>
 
           <section className={styles.btn}>
-            <a href="tel:0885701660">0885 70 16 60</a>
+            <a href="tel:+359885701660">0885 70 16 60</a>
           </section>
 
           <p>
@@ -96,7 +97,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
       <section className={styles.btn}>
-        <Link href="/">За нас</Link>
+        <Link href="/about">За нас</Link>
       </section>
     </>
   );

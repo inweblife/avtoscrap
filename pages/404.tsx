@@ -14,7 +14,7 @@ export default function NotFound() {
       <main className={styles.errorContainer}>
         <div className={styles.errorContent}>
           <h1 className={styles.errorCode}>404</h1>
-          <h2 className={styles.errorTitle}>Страната не е намерена</h2>
+          <h2 className={styles.errorTitle}>Страницата не е намерена</h2>
           <p className={styles.errorMessage}>
             Съжаляваме, но страницата която търсите не съществува или е преместена.
           </p>

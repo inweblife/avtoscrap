@@ -9,7 +9,8 @@ interface SiteMapEntry {
   lastmod?: string;
 }
 
-const generateSiteMap = (posts: any[]): string => {
+interface BlogPost { id: number; slug: string; date?: string; }
+const generateSiteMap = (posts: BlogPost[]): string => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kolizascrap.vercel.app';
 
   const today = new Date().toISOString().split('T')[0];

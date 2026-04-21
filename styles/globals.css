@@ -17,6 +17,7 @@ body {
 }
 
 .picture h1,
+.picture h2,
 .picture h3 {
   text-align: center;
 }
@@ -50,6 +51,18 @@ footer{
   text-align: center;
   padding: 1em;
   background: azure;
+}
+
+@media (max-width: 30em) {
+  body {
+    font-size: 15px;
+  }
+  header {
+    padding: 0.5em;
+  }
+  .picture {
+    padding: 0 0.5rem;
+  }
 }
 
 @media (min-width: 45em) {

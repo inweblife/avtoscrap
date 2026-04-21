@@ -2,7 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import blogPosts from "../../data/blog-posts.json";
-import styles from "../../styles/Blog.module.css";
+import blogStyles from "../../styles/Blog.module.css";
+import cardStyles from "../../styles/Home.module.css";
 import { sanitize } from "../../lib/sanitize";
 
 interface BlogPost {
@@ -42,25 +43,42 @@ export default function BlogIndex() {
           content="Полезни статии за бракуване на автомобили и изкупуване на коли за скрап."
         />
         <meta property="og:image" content={`${baseUrl}/mercedes.webp`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Блог | Коли за скрап София",
+              "description": "Полезни статии и публикации за бракуване на автомобили, документи за КАТ и изкупуване на коли за скрап в София.",
+              "url": `${baseUrl}/blog`,
+              "publisher": {
+                "@type": "Organization",
+                "name": "Коли за скрап София",
+                "logo": { "@type": "ImageObject", "url": `${baseUrl}/mercedes.webp` }
+              }
+            })
+          }}
+        />
       </Head>
 
-      <main className={styles.blogPostMain}>
-        <div className={styles.postHeader}>
+      <main className={blogStyles.blogPostMain}>
+        <div className={blogStyles.postHeader}>
           <Link href="/" aria-label="Назад към началната страница">
             ← Назад към начало
           </Link>
           <h1>Блог</h1>
-          <p className={styles.blogIntro}>
+          <p className={cardStyles.blogIntro}>
             Полезни статии и публикации за автомобилите за скрап
           </p>
         </div>
 
-        <div className={styles.blogGrid}>
+        <div className={cardStyles.blogGrid}>
           {[...(blogPosts as BlogPost[])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
-            <div key={post.id} className={styles.blogCardWrapper}>
-              <Link href={`/blog/${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
+            <div key={post.id} className={cardStyles.blogCardWrapper}>
+              <Link href={`/blog/${post.slug}`} className={cardStyles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               {post.image && (
-                <div className={styles.cardImage}>
+                <div className={cardStyles.cardImage}>
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -75,16 +93,16 @@ export default function BlogIndex() {
                   />
                 </div>
               )}
-              <div className={styles.cardContent}>
+              <div className={cardStyles.cardContent}>
                 <h3>{post.title}</h3>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>{post.date}</span>
+                <div className={blogStyles.postMeta}>
+                  <span className={blogStyles.date}>{post.date}</span>
                 </div>
                 <p
-                  className={styles.blogExcerpt}
+                  className={cardStyles.blogExcerpt}
                   dangerouslySetInnerHTML={{ __html: sanitize(post.excerpt) }}
                 />
-                <Link href={`/blog/${post.slug}`} className={styles.readMore}>Прочетете повече →</Link>
+                <Link href={`/blog/${post.slug}`} className={cardStyles.readMore}>Прочетете повече →</Link>
               </div>
             </div>
           ))}

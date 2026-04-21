@@ -79,13 +79,14 @@ export default function Home() {
               fill
               sizes="(min-width: 45em) 900px, 100vw"
               style={{ objectFit: "cover" }}
+              priority
             />
           </div>
 
           <h1>Автомобили за скрап София</h1>
-          <h3 className={styles.first_paragraph}>
+          <h2 className={styles.first_paragraph}>
             Изкупуване на автомобили в град София и областта.
-          </h3>
+          </h2>
         </div>
       </main>
       <section className={styles.text}>

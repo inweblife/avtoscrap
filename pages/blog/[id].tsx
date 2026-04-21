@@ -75,6 +75,15 @@ export default function BlogPost({ post }: PostPageProps) {
         <meta property="og:title" content={`${post.title} | Коли за скрап`} />
         <meta property="og:description" content={post.excerpt_plain} />
         <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:modified_time" content={post.date} />
+        <meta property="article:author" content={post.author} />
+        <meta property="article:section" content="Автомобили" />
+        <meta name="twitter:title" content={`${post.title} | Коли за скрап`} />
+        <meta name="twitter:description" content={post.excerpt_plain} />
+        <meta name="twitter:image" content={ogImage} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

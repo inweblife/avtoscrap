@@ -37,10 +37,11 @@ const About: React.FC = () => {
             fill
             sizes="(min-width: 45em) 900px, 100vw"
             style={{ objectFit: "cover" }}
+            priority
           />
           </div>
 
-          <h3>Вече преработихме над 100 000 автомобила за скрап</h3>
+          <h2>Вече преработихме над 100 000 автомобила за скрап</h2>
         </div>
       </main>
 

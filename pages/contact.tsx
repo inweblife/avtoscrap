@@ -8,18 +8,23 @@ const Contact: React.FC = () => {
   return (
     <>
       <Head>
-        <title>За контакти | Коли за скрап</title>
+        <title>Контакт | Коли за скрап София</title>
         <meta
           name="description"
-          content="За връзка с нас 0885 70 16 60. Работи без почивен ден от 08 до 20, включително събота и неделя. Осигурва безплатен транспорт от място."
+          content="Свържете се с нас на 0885 70 16 60. Работим без почивен ден от 08:00 до 20:00. Безплатен транспорт от адрес в София и Софийска област. Онлайн оценка на момента."
         />
         <meta
           name="keywords"
-          content="Купува изгодно коли, Най-добри цени за коли, Изкупува всякакви коли"
+          content="контакт коли за скрап, телефон изкупуване коли, оценка кола за скрап онлайн, коли за скрап Sofia"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"}/contact`} />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/contact`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/contact`} />
+        <meta property="og:title" content="Контакт | Коли за скрап София" />
+        <meta property="og:description" content="0885 70 16 60 - работим 7 дни в седмицата от 08:00 до 20:00. Безплатен транспорт и плащане в брой на адрес." />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/avtoscrap.webp`} />
       </Head>
       <main className={styles.main}>
         <h1>Контакт с Коли за скрап</h1>

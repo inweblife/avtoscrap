@@ -49,21 +49,22 @@ interface PostPageProps {
 }
 
 export default function BlogPost({ post }: PostPageProps) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app";
   const canonicalUrl = `${baseUrl}/blog/${post.slug}`;
   const ogImage = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/mercedes.webp`;
 
-  // Find previous and next posts
-  const currentIndex = blogPosts.findIndex((p: BlogPost) => p.id === post.id);
-  const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
-  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
+  // Find previous and next posts sorted by date descending
+  const sortedPosts = [...(blogPosts as BlogPost[])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
+  const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
 
   return (
     <>
       <Head>
         <title>{post.title} | Коли за скрап</title>
         <meta name="description" content={post.excerpt.replace(/<[^>]*>/g, '')} />
-        <meta name="keywords" content="коли за скрап, бракуване, документи КАТ, автомобили за скрап" />
+        <meta name="keywords" content={`${post.title}, коли за скрап, бракуване на автомобили, изкупуване на коли София`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={canonicalUrl} />
@@ -85,6 +86,8 @@ export default function BlogPost({ post }: PostPageProps) {
                 "name": post.author
               },
               "datePublished": post.date,
+              "dateModified": post.date,
+              "url": canonicalUrl,
               "image": ogImage,
               "publisher": {
                 "@type": "Organization",

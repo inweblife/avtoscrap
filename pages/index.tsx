@@ -32,13 +32,13 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"} />
+        <link rel="canonical" href={process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"} />
         <meta name="google-site-verification" content="o3yDWZaFGvq8nSbZFsW2kJnBTWBvjgYuVkIS_8vihgQ" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"} />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"} />
         <meta property="og:title" content="Коли за скрап София" />
         <meta property="og:description" content="Коли за скрап София. Изкупуване на автомобили за скрап. Калкулатор за скрап автомобили онлайн." />
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"}/mercedes.webp`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/mercedes.webp`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -12,32 +12,13 @@ interface SiteMapEntry {
 const generateSiteMap = (posts: any[]): string => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kolizascrap.vercel.app';
 
+  const today = new Date().toISOString().split('T')[0];
   const staticPages: SiteMapEntry[] = [
-    {
-      url: '/',
-      changefreq: 'weekly',
-      priority: '1.0',
-    },
-    {
-      url: '/about',
-      changefreq: 'monthly',
-      priority: '0.8',
-    },
-    {
-      url: '/services',
-      changefreq: 'monthly',
-      priority: '0.8',
-    },
-    {
-      url: '/contact',
-      changefreq: 'monthly',
-      priority: '0.8',
-    },
-    {
-      url: '/blog',
-      changefreq: 'weekly',
-      priority: '0.8',
-    },
+    { url: '/',        changefreq: 'daily',   priority: '1.0', lastmod: today },
+    { url: '/about',   changefreq: 'monthly', priority: '0.7', lastmod: today },
+    { url: '/services',changefreq: 'monthly', priority: '0.7', lastmod: today },
+    { url: '/contact', changefreq: 'monthly', priority: '0.6', lastmod: today },
+    { url: '/blog',    changefreq: 'weekly',  priority: '0.8', lastmod: today },
   ];
 
   const blogPages: SiteMapEntry[] = posts.map((post: { id: number; slug: string; date?: string }) => ({

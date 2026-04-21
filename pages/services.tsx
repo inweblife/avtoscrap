@@ -8,18 +8,23 @@ const Services: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Коли за скрап | Нашите услуги</title>
+        <title>Услуги | Коли за скрап София</title>
         <meta
           name="description"
-          content="Издава всички необходими документи за бракуване на МПС"
+          content="Изкупуване на коли за скрап в София - безплатен транспорт от адрес, плащане в брой на място, удостоверение за дерегистрация на МПС в КАТ. Работим 7 дни в седмицата."
         />
         <meta
           name="keywords"
-          content="Бракува ненужни коли, Документ за Дерегистрация КАТ, Екометал"
+          content="услуги коли за скрап, безплатен транспорт, удостоверение за дерегистрация, бракуване на МПС, изкупуване на коли София"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"}/services`} />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/services`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/services`} />
+        <meta property="og:title" content="Услуги | Коли за скрап София" />
+        <meta property="og:description" content="Безплатен транспорт, плащане в брой и удостоверение за дерегистрация. Изкупуваме всякакви коли в София и Софийска област." />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/carsforscrap.webp`} />
       </Head>
       <main className={styles.main}>
         <h1>Нашите услуги включват</h1>

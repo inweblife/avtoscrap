@@ -8,18 +8,23 @@ const About: React.FC = () => {
   return (
     <>
       <Head>
-        <title>За нас | Коли за скрап</title>
+        <title>За нас | Коли за скрап София</title>
         <meta
           name="description"
-          content="Изкупува коли за скрап в София, предлага най-добри цени за автоскрап"
+          content="Лицензиран център за изкупуване и бракуване на коли в София. Над 100 000 обработени автомобила. Безплатен транспорт, плащане в брой и удостоверение за дерегистрация на място."
         />
         <meta
           name="keywords"
-          content="Автоморга в София изкупува стари коли, Бракува автомобили, Екометал инженеринг"
+          content="коли за скрап София, изкупуване на коли, бракуване на автомобили, лицензиран център за разкомплектоване"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"}/about`} />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/about`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/about`} />
+        <meta property="og:title" content="За нас | Коли за скрап София" />
+        <meta property="og:description" content="Лицензиран център за изкупуване и бракуване на коли в София. Над 100 000 обработени автомобила. Безплатен транспорт и плащане в брой." />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/carsold.webp`} />
       </Head>
 
       <main className={styles.main}>

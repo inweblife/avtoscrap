@@ -16,7 +16,7 @@ interface BlogPost {
 }
 
 export default function BlogIndex() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app";
 
   return (
     <>

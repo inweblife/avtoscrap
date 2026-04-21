@@ -10,7 +10,7 @@ interface SiteMapEntry {
 }
 
 const generateSiteMap = (posts: any[]): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kolizascrap.vercel.app';
 
   const staticPages: SiteMapEntry[] = [
     {
@@ -31,6 +31,11 @@ const generateSiteMap = (posts: any[]): string => {
     {
       url: '/contact',
       changefreq: 'monthly',
+      priority: '0.8',
+    },
+    {
+      url: '/blog',
+      changefreq: 'weekly',
       priority: '0.8',
     },
   ];

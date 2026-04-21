@@ -72,16 +72,15 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className="picture">
-          <Image
-            src="/mercedes.webp"
-            alt="Автомобили за скрап в София - Изкупуване на стари и повредени коли"
-            width={500}
-            height={300}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
-          />
+          <div className={styles.heroImage}>
+            <Image
+              src="/mercedes.webp"
+              alt="Автомобили за скрап в София - Изкупуване на стари и повредени коли"
+              fill
+              sizes="(min-width: 45em) 900px, 100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
 
           <h1>Автомобили за скрап София</h1>
           <h3 className={styles.first_paragraph}>

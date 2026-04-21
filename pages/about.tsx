@@ -30,16 +30,15 @@ const About: React.FC = () => {
       <main className={styles.main}>
         <h1>Нашата работа говори най-добре за нас</h1>
         <div className="picture">
-          <Image
+          <div className={styles.heroImage}>
+            <Image
             src="/carsold.webp"
             alt="След преработка на над 100 000 коли за скрап в София"
-            width={500}
-            height={300}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
+            fill
+            sizes="(min-width: 45em) 900px, 100vw"
+            style={{ objectFit: "cover" }}
           />
+          </div>
 
           <h3>Вече преработихме над 100 000 автомобила за скрап</h3>
         </div>

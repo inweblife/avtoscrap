@@ -29,16 +29,15 @@ const Contact: React.FC = () => {
       <main className={styles.main}>
         <h1>Контакт с Коли за скрап</h1>
         <div className="picture">
-          <Image
+          <div className={styles.heroImage}>
+            <Image
             src="/avtoscrap.webp"
             alt="Контактуване на центъра за скрап в София"
-            width={500}
-            height={300}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
+            fill
+            sizes="(min-width: 45em) 900px, 100vw"
+            style={{ objectFit: "cover" }}
           />
+          </div>
 
           <h3>Онлайн оценка на Вашата кола веднага</h3>
         </div>

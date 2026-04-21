@@ -1,3 +1,13 @@
+.heroImage {
+  position: relative;
+  width: min(100%, 960px);
+  aspect-ratio: 16 / 9;
+  margin: 1.25rem auto 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
 .main {
   color: brown;
   text-align: center;
@@ -214,4 +224,5 @@
   .cardImage {
     height: 240px;
   }
+
 }

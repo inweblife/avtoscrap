@@ -120,12 +120,9 @@ export default function BlogPost({ post }: PostPageProps) {
               <Image
                 src={post.image}
                 alt={post.title}
-                width={600}
-                height={400}
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                }}
+                fill
+                sizes="(min-width: 45em) 800px, 100vw"
+                style={{ objectFit: "cover" }}
               />
             </div>
           )}

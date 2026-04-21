@@ -29,16 +29,15 @@ const Services: React.FC = () => {
       <main className={styles.main}>
         <h1>Нашите услуги включват</h1>
         <div className="picture">
-          <Image
+          <div className={styles.heroImage}>
+            <Image
             src="/carsforscrap.webp"
             alt="Услуги за бракуване и разкомплектоване на коли"
-            width={500}
-            height={300}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
+            fill
+            sizes="(min-width: 45em) 900px, 100vw"
+            style={{ objectFit: "cover" }}
           />
+          </div>
 
           <h3>Всичко необходимо за бракуването на Вашата кола</h3>
         </div>

@@ -5,6 +5,17 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import blogPosts from "../data/blog-posts.json";
 
+interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  image?: string;
+  date: string;
+  author: string;
+}
+
 export default function Home() {
 
   return (
@@ -202,7 +213,7 @@ export default function Home() {
         <p className={styles.blogIntro}>Последни публикации и полезни статии за автомобилите за скрап</p>
 
         <div className={styles.blogGrid}>
-          {blogPosts.map((post) => (
+          {(blogPosts as BlogPost[]).map((post) => (
             <div key={post.id} className={styles.blogCardWrapper}>
               <Link href={`/blog/${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               {post.image && (

@@ -16,8 +16,8 @@ interface BlogPost {
 }
 
 export async function getStaticProps(context: { params: { id: string } }) {
-  const post = blogPosts.find(
-    (post: BlogPost) => post.slug === context.params.id
+  const post = (blogPosts as BlogPost[]).find(
+    (post) => post.slug === context.params.id
   );
 
   if (!post) {
@@ -34,7 +34,7 @@ export async function getStaticProps(context: { params: { id: string } }) {
 }
 
 export async function getStaticPaths() {
-  const paths = blogPosts.map((post: BlogPost) => ({
+  const paths = (blogPosts as BlogPost[]).map((post) => ({
     params: { id: post.slug },
   }));
 

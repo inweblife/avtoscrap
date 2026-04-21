@@ -114,17 +114,29 @@
 }
 
 .cardImage {
+  position: relative;
   display: block;
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
-  background: #e0e0e0;
+  background: linear-gradient(180deg, #ece7e1 0%, #ddd2c7 100%);
+  border-bottom: 1px solid rgba(120, 72, 36, 0.15);
+}
+
+.cardImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.12) 100%);
+  pointer-events: none;
 }
 
 .cardImage img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
 }
 
@@ -197,5 +209,9 @@
   .blogGrid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 900px;
+  }
+
+  .cardImage {
+    height: 240px;
   }
 }

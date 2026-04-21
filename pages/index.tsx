@@ -224,9 +224,11 @@ export default function Home() {
                     alt={post.title}
                     width={400}
                     height={250}
+                    sizes="(min-width: 45em) 450px, 100vw"
                     style={{
                       width: "100%",
-                      height: "auto",
+                      height: "100%",
+                      objectFit: "cover",
                     }}
                   />
                 </div>

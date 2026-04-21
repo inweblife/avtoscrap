@@ -247,6 +247,24 @@
   margin: 0;
 }
 
+@media (max-width: 30em) {
+  .blogPostMain {
+    padding: 1em 0.75em;
+  }
+  .postHeader h1 {
+    font-size: 1.6em;
+  }
+  .postContent {
+    padding: 1.2em;
+  }
+  .postContent h2 {
+    font-size: 1.3em;
+  }
+  .postImage {
+    margin: 0 -1.2em 1em -1.2em;
+  }
+}
+
 @media (min-width: 45em) {
   .postHeader h1 {
     font-size: 3em;
@@ -271,5 +289,11 @@
   .cardImage {
     height: 240px;
   }
+}
 
+@media (min-width: 70em) {
+  .blogGrid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+  }
 }

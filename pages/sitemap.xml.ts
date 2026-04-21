@@ -50,7 +50,6 @@ const generateSiteMap = (posts: BlogPost[]): string => {
 };
 
 function SiteMap() {
-  // This component is not used - the XML is generated server-side
   return null;
 }
 

@@ -86,10 +86,8 @@ const About: React.FC = () => {
             За да върнете кола за скрап при нас е достатъчно да имате един от
             двата талона на колата и да представите Ваш документ, като лице,
             което връща колата. От наша страна ще издадем{" "}
-              <Link href="/blog/dokumenti-za-brakuvane-na-kola">
-                <a style={{ textDecoration: "none", color: "inherit" }}>
+              <Link href="/blog/dokumenti-za-brakuvane-na-kola" style={{ textDecoration: "none", color: "inherit" }}>
                   <strong>документ за бракуване на кола</strong>
-                </a>
               </Link>
             . Това е важно по-късно при дерегистрация на МПС.
           </p>

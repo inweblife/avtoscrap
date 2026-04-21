@@ -81,9 +81,9 @@ export default function Home() {
         <div className={styles.paragraph}>
           <p>
             Ние сме лицензиран търговец на{" "}
-            <a href="/about" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link href="/about" style={{ textDecoration: "none", color: "inherit" }}>
               <strong>коли за скрап</strong>
-            </a>{" "}
+            </Link>{" "}
             - търговско дружество опериращо на територията на град София, чиято
             основна дейност е изкупуване на автомобили за скрап.
           </p>
@@ -116,9 +116,9 @@ export default function Home() {
 
           <p>
             За всяка една кола, която купуваме, издаваме{" "}
-            <a href="/services" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link href="/services" style={{ textDecoration: "none", color: "inherit" }}>
               <strong>документи за бракуване</strong>
-            </a>
+            </Link>
             , с които по-късно бързо и лесно ще отпишете колата от КАТ,
             съответно - Общината, за да бъде снета от отчет.
           </p>
@@ -176,9 +176,9 @@ export default function Home() {
           <p>
             За да бъде оценена Вашата кола, е необходимо да изберете удобен за
             Вас начин{" "}
-            <a href="/contact" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link href="/contact" style={{ textDecoration: "none", color: "inherit" }}>
               <strong>за връзка с нас</strong>
-            </a>{" "}
+            </Link>{" "}
             - може да ни се обадите по телефона, може да ни пишете в месинджър
             или чрез имейл на пощата. Преди това, обаче, е необходимо да се
             приготвите с малко данни за Вашия автомобил - марка, модел, година
@@ -204,9 +204,7 @@ export default function Home() {
         <div className={styles.blogGrid}>
           {blogPosts.map((post) => (
             <div key={post.id} className={styles.blogCardWrapper}>
-              <Link href={`/blog/${post.slug}`}>
-                <a className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
-              </Link>
+              <Link href={`/blog/${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               {post.image && (
                 <div className={styles.cardImage}>
                   <Image
@@ -227,9 +225,7 @@ export default function Home() {
                   className={styles.blogExcerpt}
                   dangerouslySetInnerHTML={{ __html: post.excerpt }}
                 />
-                <Link href={`/blog/${post.slug}`}>
-                  <a className={styles.readMore}>Прочетете повече →</a>
-                </Link>
+                <Link href={`/blog/${post.slug}`} className={styles.readMore}>Прочетете повече →</Link>
               </div>
             </div>
           ))}

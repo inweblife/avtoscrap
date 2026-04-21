@@ -57,9 +57,7 @@ export default function BlogIndex() {
         <div className={styles.blogGrid}>
           {blogPosts.map((post: BlogPost) => (
             <div key={post.id} className={styles.blogCardWrapper}>
-              <Link href={`/blog/${post.slug}`}>
-                <a className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
-              </Link>
+              <Link href={`/blog/${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               {post.image && (
                 <div className={styles.cardImage}>
                   <Image
@@ -83,9 +81,7 @@ export default function BlogIndex() {
                   className={styles.blogExcerpt}
                   dangerouslySetInnerHTML={{ __html: post.excerpt }}
                 />
-                <Link href={`/blog/${post.slug}`}>
-                  <a className={styles.readMore}>Прочетете повече →</a>
-                </Link>
+                <Link href={`/blog/${post.slug}`} className={styles.readMore}>Прочетете повече →</Link>
               </div>
             </div>
           ))}

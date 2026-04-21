@@ -199,6 +199,22 @@
   text-decoration: underline;
 }
 
+@media (max-width: 30em) {
+  .blogSection {
+    padding: 1em 0.5em;
+  }
+  .blogSection h2 {
+    font-size: 1.5em;
+  }
+  .cardContent {
+    padding: 1em;
+  }
+  .first_paragraph,
+  .plain_text {
+    max-width: 95%;
+  }
+}
+
 @media (min-width: 45em) {
   .text {
     columns: 2;
@@ -225,5 +241,11 @@
   .cardImage {
     height: 240px;
   }
+}
 
+@media (min-width: 70em) {
+  .blogGrid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+  }
 }

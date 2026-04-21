@@ -16,8 +16,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <h3 className={styles.title}>Коли за скрап</h3>
+        <Link href="/" className={styles.logo} aria-label="Начална страница - Коли за скрап София">
+          <span className={styles.title}>Коли за скрап</span>
         </Link>
 
         <button

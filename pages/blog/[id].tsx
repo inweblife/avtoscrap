@@ -89,6 +89,20 @@ export default function BlogPost({ post }: PostPageProps) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Начало", "item": baseUrl },
+                { "@type": "ListItem", "position": 2, "name": "Блог", "item": `${baseUrl}/blog` },
+                { "@type": "ListItem", "position": 3, "name": post.title, "item": canonicalUrl }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": post.title,
               "description": post.excerpt_plain,

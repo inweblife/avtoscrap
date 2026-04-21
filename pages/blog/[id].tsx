@@ -115,7 +115,7 @@ export default function BlogPost({ post }: PostPageProps) {
 
       <main className={styles.blogPostMain}>
         <div className={styles.postHeader}>
-          <Link href="/" aria-label="Назад към началната страница">← Назад към начало</Link>
+          <Link href="/blog" aria-label="Назад към блога">← Назад към блога</Link>
           <h1>{post.title}</h1>
           <div className={styles.postMeta}>
             <span className={styles.author}>{post.author}</span>
@@ -132,6 +132,7 @@ export default function BlogPost({ post }: PostPageProps) {
                 fill
                 sizes="(min-width: 45em) 800px, 100vw"
                 style={{ objectFit: "cover" }}
+                priority
               />
             </div>
           )}
@@ -139,16 +140,16 @@ export default function BlogPost({ post }: PostPageProps) {
         </article>
 
         {/* Previous/Next Post Navigation */}
-        <nav className={styles.postNavigation} style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2em', padding: '1em 0', borderTop: '1px solid #ccc' }}>
+        <nav className={styles.postNavigation}>
           {prevPost ? (
-            <Link href={`/blog/${prevPost.slug}`} className={styles.prevPost} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link href={`/blog/${prevPost.slug}`} className={styles.navLink}>
               ← Предишен: {prevPost.title}
             </Link>
           ) : (
             <span></span>
           )}
           {nextPost ? (
-            <Link href={`/blog/${nextPost.slug}`} className={styles.nextPost} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link href={`/blog/${nextPost.slug}`} className={styles.navLink}>
               Следващ: {nextPost.title} →
             </Link>
           ) : (

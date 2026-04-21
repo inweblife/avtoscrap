@@ -71,6 +71,56 @@
   margin-bottom: 0;
 }
 
+.postContent a {
+  color: brown;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.postContent a:hover {
+  color: darkred;
+}
+
+.postContent h3 {
+  color: brown;
+  font-size: 1.25em;
+  margin: 1.2em 0 0.5em 0;
+}
+
+.postContent ul,
+.postContent ol {
+  margin: 0 0 1.2em 0;
+  padding-left: 1.5em;
+}
+
+.postContent li {
+  margin-bottom: 0.4em;
+}
+
+.postNavigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 2em;
+  padding: 1.2em 0;
+  border-top: 2px solid #e0e0e0;
+}
+
+.navLink {
+  color: brown;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  max-width: 45%;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: darkred;
+  text-decoration: underline;
+}
+
 .postImage {
   position: relative;
   margin: 0 -2em 1.5em -2em;

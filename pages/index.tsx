@@ -22,10 +22,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Коли за скрап София</title>
+        <title>Коли за скрап София - Изкупуване на автомобили | Безплатен транспорт</title>
         <meta
           name="description"
-          content="Коли за скрап София. Изкупуване на автомобили за скрап. Калкулатор за скрап автомобили онлайн. "
+          content="Изкупуване на коли за скрап в София и Софийска област. Безплатен транспорт от адрес, плащане в брой на момента, удостоверение за дерегистрация. Работим 7 дни в седмицата."
         />
         <meta
           name="keywords"
@@ -37,8 +37,8 @@ export default function Home() {
         <meta name="google-site-verification" content="o3yDWZaFGvq8nSbZFsW2kJnBTWBvjgYuVkIS_8vihgQ" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"} />
-        <meta property="og:title" content="Коли за скрап София" />
-        <meta property="og:description" content="Коли за скрап София. Изкупуване на автомобили за скрап. Калкулатор за скрап автомобили онлайн." />
+        <meta property="og:title" content="Коли за скрап София - Изкупуване на автомобили" />
+        <meta property="og:description" content="Изкупуване на коли за скрап в София. Безплатен транспорт от адрес, плащане в брой на момента, удостоверение за дерегистрация." />
         <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_URL || "https://kolizascrap.vercel.app"}/mercedes.webp`} />
         <script
           type="application/ld+json"
@@ -46,9 +46,15 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
+              "@id": "https://kolizascrap.vercel.app/#business",
               "name": "Коли за скрап София",
-              "description": "Изкупуване на автомобили за скрап в София и областта. Безплатен транспорт и документи за бракуване.",
+              "url": "https://kolizascrap.vercel.app",
+              "description": "Изкупуване на автомобили за скрап в София и Софийска област. Безплатен транспорт от адрес, плащане в брой на момента, удостоверение за дерегистрация.",
               "telephone": "+359885701660",
+              "email": "cars@ecometal.bg",
+              "image": "https://kolizascrap.vercel.app/mercedes.webp",
+              "logo": "https://kolizascrap.vercel.app/mercedes.webp",
+              "sameAs": ["https://www.facebook.com/ecometal/"],
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "ул. Свети Георги Победоносец №1а",
@@ -57,13 +63,11 @@ export default function Home() {
                 "postalCode": "1849",
                 "addressCountry": "BG"
               },
-              "areaServed": [
-                { "@type": "City", "name": "София" },
-                { "@type": "City", "name": "Пловдив" },
-                { "@type": "City", "name": "Варна" },
-                { "@type": "City", "name": "Бургас" },
-                { "@type": "Country", "name": "България" }
-              ],
+              "areaServed": {
+                "@type": "GeoCircle",
+                "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 42.6977, "longitude": 23.3219 },
+                "geoRadius": "50000"
+              },
               "priceRange": "$$",
               "openingHours": "Mo-Su 08:00-20:00"
             })
@@ -148,18 +152,18 @@ export default function Home() {
           </p>
 
           <p>
-            <a href="https://kolazascrap.com/koli-za-scrap-sofia/">
+            <a href="https://kolazascrap.com/koli-za-scrap-sofia/" target="_blank" rel="noopener noreferrer">
               <strong>Изкупуваме коли за скрап в град София</strong>
             </a>
             , както и близките села около столицата в радиус 50 километра, като
             нашите Пътни помощи успяват да достигнат всяка една точка, където
             има възможност да бъде качен автомобила на платформата за извозване.
             Обслужваме още градовете{" "}
-            <a href="https://kolazascrap.com/koli-za-scrap-plovdiv/">
+            <a href="https://kolazascrap.com/koli-za-scrap-plovdiv/" target="_blank" rel="noopener noreferrer">
               <strong>Пловдив</strong>
             </a>
             ,{" "}
-            <a href="https://kolazascrap.com/koli-za-scrap-varna/">
+            <a href="https://kolazascrap.com/koli-za-scrap-varna/" target="_blank" rel="noopener noreferrer">
               <strong>Варна</strong>
             </a>
             , Бургас и въобще цяла България.
@@ -173,10 +177,10 @@ export default function Home() {
       <section className={styles.last}>
         <div className={styles.item1}>
           <h3 className={styles.heading_services}>Нашите услуги включват</h3>
-          <h5 className={styles.plain_text}>
+          <p className={styles.plain_text}>
             Безплатен транспорт, взимане от адрес, документ за бракуване важащ
-            пред КАТ и др. .
-          </h5>
+            пред КАТ и др.
+          </p>
         </div>
       </section>
       <section className={styles.button}>

@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="bg">
       <Head>
+        <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#8B4513" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

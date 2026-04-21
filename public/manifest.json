@@ -10,8 +10,8 @@
   "background_color": "#F5F5DC",
   "icons": [
     { "src": "/favicon.ico", "sizes": "32x32", "type": "image/x-icon" },
-    { "src": "/favicon.ico", "sizes": "192x192", "type": "image/x-icon", "purpose": "any" },
-    { "src": "/favicon.ico", "sizes": "512x512", "type": "image/x-icon", "purpose": "maskable" }
+    { "src": "/avtoscrap.webp", "sizes": "192x192", "type": "image/webp", "purpose": "any" },
+    { "src": "/avtoscrap.webp", "sizes": "512x512", "type": "image/webp", "purpose": "maskable" }
   ],
   "categories": ["business", "automotive"]
 }

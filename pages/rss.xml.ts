@@ -7,6 +7,7 @@ interface BlogPost {
   title: string;
   slug: string;
   excerpt: string;
+  excerpt_plain: string;
   content: string;
   image?: string;
   date: string;
@@ -22,7 +23,7 @@ const generateRss = (posts: BlogPost[]): string => {
     .map((post) => {
       const pubDate = new Date(post.date).toUTCString();
       const link = `${baseUrl}/blog/${post.slug}`;
-      const excerpt = post.excerpt.replace(/<[^>]+>/g, '');
+      const excerpt = post.excerpt_plain || post.excerpt.replace(/<[^>]+>/g, '');
       return `
     <item>
       <title><![CDATA[${post.title}]]></title>

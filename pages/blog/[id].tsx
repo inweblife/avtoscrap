@@ -3,12 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/Blog.module.css";
 import blogPosts from "../../data/blog-posts.json";
+import { sanitize } from "../../lib/sanitize";
 
 interface BlogPost {
   id: number;
   title: string;
   slug: string;
   excerpt: string;
+  excerpt_plain: string;
   content: string;
   image?: string;
   date: string;
@@ -63,7 +65,7 @@ export default function BlogPost({ post }: PostPageProps) {
     <>
       <Head>
         <title>{post.title} | Коли за скрап</title>
-        <meta name="description" content={post.excerpt.replace(/<[^>]*>/g, '')} />
+        <meta name="description" content={post.excerpt_plain} />
         <meta name="keywords" content={`${post.title}, коли за скрап, бракуване на автомобили, изкупуване на коли София`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -71,7 +73,7 @@ export default function BlogPost({ post }: PostPageProps) {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={`${post.title} | Коли за скрап`} />
-        <meta property="og:description" content={post.excerpt.replace(/<[^>]*>/g, '')} />
+        <meta property="og:description" content={post.excerpt_plain} />
         <meta property="og:image" content={ogImage} />
         <script
           type="application/ld+json"
@@ -80,7 +82,7 @@ export default function BlogPost({ post }: PostPageProps) {
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": post.title,
-              "description": post.excerpt.replace(/<[^>]*>/g, ''),
+              "description": post.excerpt_plain,
               "author": {
                 "@type": "Person",
                 "name": post.author
@@ -127,7 +129,7 @@ export default function BlogPost({ post }: PostPageProps) {
               />
             </div>
           )}
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div dangerouslySetInnerHTML={{ __html: sanitize(post.content) }} />
         </article>
 
         {/* Previous/Next Post Navigation */}

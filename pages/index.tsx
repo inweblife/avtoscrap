@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import blogPosts from "../data/blog-posts.json";
+import { sanitize } from "../lib/sanitize";
 
 interface BlogPost {
   id: number;
@@ -234,7 +235,7 @@ export default function Home() {
                 <h3>{post.title}</h3>
                 <p
                   className={styles.blogExcerpt}
-                  dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                  dangerouslySetInnerHTML={{ __html: sanitize(post.excerpt) }}
                 />
                 <Link href={`/blog/${post.slug}`} className={styles.readMore}>Прочетете повече →</Link>
               </div>

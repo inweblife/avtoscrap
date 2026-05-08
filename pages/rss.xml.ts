@@ -39,7 +39,7 @@ const generateRss = (posts: BlogPost[]): string => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Коли за скрап София — Блог</title>
+    <title>Коли за скрап София - Блог</title>
     <link>${baseUrl}</link>
     <description>Полезни статии за изкупуване и бракуване на автомобили в София и Софийска област</description>
     <language>bg</language>

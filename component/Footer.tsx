@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
       <div className={styles.bottom}>
         <p>&copy; {currentYear} Коли за скрап София. Всички права запазени.</p>
         <p className={styles.credit}>
-          <a href="https://inweblife.pages.dev/" target="_blank" rel="noopener noreferrer">
+          <a href="https://inweblife.net/" target="_blank" rel="noopener noreferrer">
             <strong>Изработка на уебсайт и оптимизация</strong>
           </a>
         </p>

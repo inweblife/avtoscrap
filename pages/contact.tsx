@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
           </p>
         </div>
       </section>
-      <section className={styles.text}>
+      <section className={styles.infoSection}>
         <div className={styles.paragraph}>
           <h2>Как да проверя дали МПС е дерегистрирано</h2>
           <p>

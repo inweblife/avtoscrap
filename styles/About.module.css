@@ -38,6 +38,15 @@
     column-span: all;
   }
 
+  .subSubHeading {
+    color: brown;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 1em 0 0.3em;
+    text-align: left;
+    column-span: all;
+  }
+
   .btn {
     text-align: center;
     padding: 1.5em 0;

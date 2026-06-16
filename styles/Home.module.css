@@ -230,6 +230,55 @@
   text-decoration: underline;
 }
 
+/* Inline blog articles for SEO */
+.blogArticles {
+  max-width: 800px;
+  margin: 0 auto 3em;
+  padding: 0 1em;
+}
+
+.blogArticle {
+  border-top: 2px solid brown;
+  padding: 2.5em 0;
+}
+
+.blogArticle > h2 {
+  color: brown;
+  font-size: 1.6em;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+}
+
+.blogArticle > h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blogArticle > h2 a:hover {
+  text-decoration: underline;
+}
+
+.articleContent {
+  line-height: 1.75;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 1.5em;
+}
+
+.articleContent h2,
+.articleContent h3 {
+  color: brown;
+}
+
+.articleContent a {
+  color: brown;
+}
+
+.articleContent ul,
+.articleContent ol {
+  padding-left: 1.5em;
+}
+
 @media (max-width: 30em) {
   .blogSection {
     padding: 1em 0.5em;

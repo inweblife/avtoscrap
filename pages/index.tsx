@@ -220,7 +220,7 @@ export default function Home() {
         <div className={styles.blogGrid}>
           {[...(blogPosts as BlogPost[])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
             <div key={post.id} className={styles.blogCardWrapper}>
-              <Link href={`/blog/${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
+              <Link href={`#${post.slug}`} className={styles.blogCardLink} aria-label={`Прочети: ${post.title}`} />
               {post.image && (
                 <div className={styles.cardImage}>
                   <Image
@@ -243,11 +243,28 @@ export default function Home() {
                   className={styles.blogExcerpt}
                   dangerouslySetInnerHTML={{ __html: sanitize(post.excerpt) }}
                 />
-                <Link href={`/blog/${post.slug}`} className={styles.readMore}>Прочетете повече →</Link>
+                <Link href={`#${post.slug}`} className={styles.readMore}>Прочетете повече →</Link>
               </div>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className={styles.blogArticles}>
+        {[...(blogPosts as BlogPost[])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
+          <article key={post.id} id={post.slug} className={styles.blogArticle}>
+            <h2>
+              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            </h2>
+            <div
+              className={styles.articleContent}
+              dangerouslySetInnerHTML={{ __html: sanitize(post.content) }}
+            />
+            <Link href={`/blog/${post.slug}`} className={styles.readMore}>
+              Прочетете цялата статия →
+            </Link>
+          </article>
+        ))}
       </section>
     </>
   );
